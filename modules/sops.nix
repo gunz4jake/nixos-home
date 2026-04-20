@@ -2,7 +2,7 @@
 
 {
   sops.defaultSopsFile = ../secrets/secrets.yaml;
-  sops.age.sshKeys = [ "/etc/ssh/ssh_host_ed25519_key" ];
+  sops.age.sshKeyPaths = [ "/etc/ssh/ssh_host_ed25519_key" ];
 
   sops.secrets."aiostreams_env" = {
     owner = "root";
