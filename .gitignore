@@ -1,0 +1,3 @@
+# Encrypted secrets file — never commit the plaintext or encrypted file directly.
+# Commit secrets.yaml.example instead, and encrypt/manage secrets.yaml manually.
+secrets/secrets.yaml
