@@ -21,7 +21,7 @@
   virtualisation.oci-containers.containers = {
     mediaflow-redis = {
       image = "redis:7-alpine";
-      extraOptions = [ "--network=mediaflow" ];
+      extraOptions = [ "--network=mediaflow" "--restart=unless-stopped" ];
       volumes = [ "/var/lib/mediaflow-redis:/data" ];
       autoStart = true;
     };
@@ -34,7 +34,7 @@
         REDIS_URL = "redis://mediaflow-redis:6379";
       };
       environmentFiles = [ config.sops.secrets."mediaflow_proxy_env".path ];
-      extraOptions = [ "--network=mediaflow" ];
+      extraOptions = [ "--network=mediaflow" "--restart=unless-stopped" ];
       dependsOn = [ "mediaflow-redis" ];
       autoStart = true;
     };
