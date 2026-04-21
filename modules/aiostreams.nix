@@ -9,7 +9,6 @@
     };
     environmentFiles = [ config.sops.secrets."aiostreams_env".path ];
     volumes = [ "/var/lib/aiostreams:/app/data" ];
-    extraOptions = [ "--restart=unless-stopped" ];
     autoStart = true;
   };
 }
