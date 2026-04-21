@@ -4,6 +4,7 @@
   systemd.services.docker-image-update = {
     description = "Pull latest Docker images and restart containers";
     after = [ "docker.service" "network-online.target" ];
+    wants = [ "network-online.target" ];
     requires = [ "docker.service" ];
     serviceConfig = {
       Type = "oneshot";
