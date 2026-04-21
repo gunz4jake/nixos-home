@@ -15,6 +15,7 @@
       ./modules/caddy.nix
       ./modules/security.nix
       ./modules/sops.nix
+      ./modules/docker-update.nix
     ];
 
   # Use the GRUB 2 boot loader.
