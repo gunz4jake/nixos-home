@@ -19,6 +19,9 @@
       ${pkgs.systemd}/bin/systemctl restart docker-mediaflow-redis.service
       ${pkgs.systemd}/bin/systemctl restart docker-mediaflow-proxy.service
       ${pkgs.systemd}/bin/systemctl restart docker-aiostreams.service
+
+      # Remove old unused images to free disk space
+      ${pkgs.docker}/bin/docker image prune -af
     '';
   };
 
