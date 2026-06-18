@@ -10,9 +10,4 @@
     restartUnits = [ "docker-aiostreams.service" ];
   };
 
-  sops.secrets."mediaflow_proxy_env" = {
-    owner = "root";
-    mode = "0400";
-    restartUnits = [ "docker-mediaflow-proxy.service" ];
-  };
 }

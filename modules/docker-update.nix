@@ -12,12 +12,8 @@
     script = ''
       # Pull latest images
       ${pkgs.docker}/bin/docker pull ghcr.io/viren070/aiostreams:latest
-      ${pkgs.docker}/bin/docker pull mhdzumair/mediaflow-proxy:latest
-      ${pkgs.docker}/bin/docker pull redis:7-alpine
 
       # Restart containers to pick up new images
-      ${pkgs.systemd}/bin/systemctl restart docker-mediaflow-redis.service
-      ${pkgs.systemd}/bin/systemctl restart docker-mediaflow-proxy.service
       ${pkgs.systemd}/bin/systemctl restart docker-aiostreams.service
 
       # Remove old unused images to free disk space
