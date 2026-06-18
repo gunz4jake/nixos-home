@@ -6,7 +6,7 @@
     virtualHosts."aiostreams.ningen.xyz".extraConfig = ''
       reverse_proxy localhost:3000
     '';
-virtualHosts."jellyfin.ningen.xyz".extraConfig = ''
+    virtualHosts."jellyfin.ningen.xyz".extraConfig = ''
       reverse_proxy 192.168.3.157:3000
     '';
   };
