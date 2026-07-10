@@ -8,13 +8,13 @@ NixOS configuration for a QEMU VM running inside Proxmox on local hardware.
 |---------|-----|---------|
 | aiostreams | https://aiostreams.ningen.xyz | Stremio addon aggregator — aggregates torrent/debrid streaming sources |
 | jellyfin | https://jellyfin.ningen.xyz | Reverse proxy to Jellyfin running in a Proxmox LXC at 192.168.3.157:3000 |
-| prowlarr | https://prowlarr.ningen.xyz | Reverse proxy to Prowlarr at 192.168.3.157:9696 |
+| nzb | https://nzb.ningen.xyz | Reverse proxy to NZB service at 192.168.3.157:5076 |
 
-Caddy handles TLS termination for all. Aiostreams runs as an OCI container on this VM; Jellyfin and Prowlarr are external.
+Caddy handles TLS termination for all using Cloudflare DNS-01 ACME challenge. Aiostreams runs as an OCI container on this VM; Jellyfin and the NZB service are external.
 
 ## External Dependencies
 
-- **192.168.3.157** — Proxmox LXC container running Jellyfin and Prowlarr. Static IP assigned in the router. If it becomes unreachable, check the LXC in Proxmox, not this VM.
+- **192.168.3.157** — Proxmox LXC container running Jellyfin and the NZB service. Static IP assigned in the router. If it becomes unreachable, check the LXC in Proxmox, not this VM.
 
 ## Deploying Changes
 
@@ -36,6 +36,7 @@ sops secrets/secrets.yaml
 
 Current secrets:
 - `aiostreams_env` — environment variables injected into the aiostreams container
+- `caddy_env` — Cloudflare API token (`CF_API_TOKEN`) used by Caddy for DNS-01 ACME challenges
 
 ## Container Updates
 
