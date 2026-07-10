@@ -10,4 +10,10 @@
     restartUnits = [ "docker-aiostreams.service" ];
   };
 
+  sops.secrets."caddy_env" = {
+    owner = "caddy";
+    mode = "0400";
+    restartUnits = [ "caddy.service" ];
+  };
+
 }
