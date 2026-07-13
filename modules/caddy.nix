@@ -19,6 +19,9 @@
     virtualHosts."nzb.ningen.xyz".extraConfig = ''
       reverse_proxy 192.168.3.157:5076
     '';
+    virtualHosts."prowlarr.ningen.xyz".extraConfig = ''
+      reverse_proxy 192.168.3.157:9696
+    '';
   };
 
   systemd.services.caddy.serviceConfig.EnvironmentFile = config.sops.secrets."caddy_env".path;
