@@ -10,17 +10,8 @@
     globalConfig = ''
       acme_dns cloudflare {env.CF_API_TOKEN}
     '';
-    virtualHosts."aiostreams.ningen.xyz".extraConfig = ''
-      reverse_proxy localhost:3000
-    '';
     virtualHosts."jellyfin.ningen.xyz".extraConfig = ''
       reverse_proxy 192.168.3.157:3000
-    '';
-    virtualHosts."nzb.ningen.xyz".extraConfig = ''
-      reverse_proxy 192.168.3.157:5076
-    '';
-    virtualHosts."prowlarr.ningen.xyz".extraConfig = ''
-      reverse_proxy 192.168.3.157:9696
     '';
   };
 

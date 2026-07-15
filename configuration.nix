@@ -6,7 +6,6 @@
       ./hardware-configuration.nix
       ./modules/maintenance.nix
       ./modules/docker.nix
-      ./modules/aiostreams.nix
       ./modules/caddy.nix
       ./modules/security.nix
       ./modules/sops.nix
