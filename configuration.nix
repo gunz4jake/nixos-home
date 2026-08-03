@@ -26,6 +26,8 @@
     extraGroups = [ "wheel" ];
   };
 
+  security.sudo.wheelNeedsPassword = false;
+
   nixpkgs.config.allowUnfree = true;
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   nix.settings.max-jobs = "auto";
