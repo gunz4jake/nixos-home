@@ -37,7 +37,6 @@
     htop
     nload
     git
-    claude-code
   ];
 
   services.openssh = {
